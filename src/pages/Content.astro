@@ -77,52 +77,35 @@ import Logo from "@src/components/Logo.component.astro";
         a tus objetivos y requisitos.
       </li>
     </ul>
-    </div>
-    
-    <div id="block4" class="centered-block">
+  </div>
+
+  <div id="block4" class="centered-block">
     <Logo class="text-center text-3xl" ejeX="-20" size="400" />
-        <h1 class="text-2xl font-bold text-pink-300 mb-3">Te esperamos</h1>
-        <p class="text-lg mb-6">
-          Si estás buscando una consultora de software comprometida, innovadora y
-          orientada a resultados, ¡has venido al lugar correcto! <a
-            href="#"
-            class="text-pink-500 hover:underline">Contáctanos</a
-          > hoy mismo para descubrir cómo podemos ayudarte a llevar tu negocio al siguiente
-          nivel con nuestras soluciones de software a medida.
-        </p>
-    </div>
+    <h1 class="text-2xl font-bold text-pink-300 mb-3">Te esperamos</h1>
+    <p class="text-lg mb-6">
+      Si estás buscando una consultora de software comprometida, innovadora y
+      orientada a resultados, ¡has venido al lugar correcto! <a
+        href="#"
+        class="text-pink-500 hover:underline">Contáctanos</a
+      > hoy mismo para descubrir cómo podemos ayudarte a llevar tu negocio al siguiente
+      nivel con nuestras soluciones de software a medida.
+    </p>
+  </div>
 </div>
 
 <script>
   import { handleDOMContentLoaded } from "@src/utils/vertical-navigate.astro.ts";
   import { handleMediaQueryChange } from "@src/utils/media-clases.astro";
+  import { observerToAnimate } from "@src/utils/observer-to-animate.astro";
 
   const desktopClasses = ["mx-20", "p-10", "text-center"];
   const mobileClasses = ["mx-4", "p-4", "text-left", "text-sm"];
 
   const mediaQuery = window.matchMedia("(min-width: 768px)");
   const blocks = document.querySelectorAll(".centered-block");
+
   let lastScrollTop = 0;
-
-  const observer = new IntersectionObserver((entries) => {
-    let st = window.pageYOffset || document.documentElement.scrollTop;
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        if (st > lastScrollTop) {
-          // downscroll code
-          entry.target.classList.add("animate-down");
-        } else {
-          // upscroll code
-          entry.target.classList.add("animate-up");
-        }
-      } else {
-        entry.target.classList.remove("animate-down");
-        entry.target.classList.remove("animate-up");
-      }
-    });
-    lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
-  });
-
+  const observer = observerToAnimate(lastScrollTop);
   blocks.forEach((block) => {
     observer.observe(block);
   });
@@ -149,14 +132,9 @@ import Logo from "@src/components/Logo.component.astro";
   }
   @media (max-width: 768px) {
     .centered-block {
-      /* opacity: 0;
-      transition: opacity 0.5s ease-in-out; */
       margin-bottom: 200px;
     }
 
-    /* .centered-block.active {
-      opacity: 1;
-    } */
     .animate-down {
       animation: moveDown 1s ease-in-out;
     }

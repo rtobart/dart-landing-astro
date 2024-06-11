@@ -4,7 +4,6 @@ export function handleDOMContentLoaded(blocks: any) {
         blocks.forEach(function(block: any, index: any) {
             if (isInViewport(block) && indexActiveBlock !== index) {
                 const list = [0, 1, 2, 3, 4]
-                console.log('####### agrega active a ', index);
                 block.classList.add('active');
                 indexActiveBlock = index;
                 list.forEach((item) => {
