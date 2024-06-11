@@ -1,4 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="180 30 1 60">
+---
+const { ejeX = 0, size = 1500 } = Astro.props;
+---
+<svg xmlns="http://www.w3.org/2000/svg" viewBox={`${ejeX} 0 ${size} 130`}>
     <defs>
         <filter id="glitch">
             <feFlood flood-color="#FF69B4" result="rose"/>
@@ -48,7 +51,7 @@
             <animate attributeName="opacity" dur="1.2s" values="0;1;0" repeatCount="indefinite"/>
         </path>
     </g>
-    <text x="150" y="80" font-family="Montserrat, sans-serif" font-size="60" fill="#FFF" font-weight="bold">D</text>
+    <text x="150" y="80" font-family="Montserrat, sans-serif" font-size="60" fill="#FFF" font-weight="bold">Dart</text>
     <defs>
         <style>@font-face{font-family:&apos;Montserrat&apos;;src:url(https://fonts.gstatic.com/s/montserrat/v15/JTUSjIg1_i6t8kCHKm459Wlhzg.ttf) format(&apos;truetype&apos;);font-weight:700}</style>
     </defs>
