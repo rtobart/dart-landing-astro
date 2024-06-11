@@ -102,39 +102,30 @@ import Logo from "@src/components/Logo.component.astro";
 
   const mediaQuery = window.matchMedia("(min-width: 768px)");
   const blocks = document.querySelectorAll(".centered-block");
-
   let lastScrollTop = 0;
 
-  window.addEventListener(
-    "scroll",
-    () => {
-      let st = window.pageYOffset || document.documentElement.scrollTop;
+  const observer = new IntersectionObserver((entries) => {
+    let st = window.pageYOffset || document.documentElement.scrollTop;
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        if (st > lastScrollTop) {
+          // downscroll code
+          entry.target.classList.add("animate-down");
+        } else {
+          // upscroll code
+          entry.target.classList.add("animate-up");
+        }
+      } else {
+        entry.target.classList.remove("animate-down");
+        entry.target.classList.remove("animate-up");
+      }
+    });
+    lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+  });
 
-      blocks.forEach((block) => {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              if (st > lastScrollTop) {
-                // downscroll code
-                entry.target.classList.add("animate-down");
-              } else {
-                // upscroll code
-                entry.target.classList.add("animate-up");
-              }
-            } else {
-              entry.target.classList.remove("animate-down");
-              entry.target.classList.remove("animate-up");
-            }
-          });
-        });
-
-        observer.observe(block);
-      });
-
-      lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
-    },
-    false
-  );
+  blocks.forEach((block) => {
+    observer.observe(block);
+  });
 
   handleMediaQueryChange(blocks, mediaQuery, desktopClasses, mobileClasses);
   mediaQuery.addEventListener("change", () =>
@@ -160,7 +151,7 @@ import Logo from "@src/components/Logo.component.astro";
     .centered-block {
       /* opacity: 0;
       transition: opacity 0.5s ease-in-out; */
-      margin-bottom: 100px;
+      margin-bottom: 200px;
     }
 
     /* .centered-block.active {
