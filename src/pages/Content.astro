@@ -2,79 +2,198 @@
 import Logo from "@src/components/Logo.component.astro";
 ---
 
-<style>
-    .centered-block {
-        opacity: 0;
-        transition: opacity 0.5s ease-in-out;
-        margin-bottom: 50px;
-    }
+<div>
+  <div id="block0" class="centered-block active">
+    <Logo class="text-center text-3xl" ejeX="-20" size="400" />
+    <h1 class="text-3xl font-bold text-pink-500 mb-6 text-center">
+      Consultora de Software Innovadora
+    </h1>
+    <p class="text-lg mb-6">
+      En nuestra consultora de software, nos enorgullece ofrecer soluciones a
+      medida tanto para empresas emergentes como para grandes corporaciones. Nos
+      especializamos en el desarrollo de software independiente, abarcando tanto
+      código abierto como soluciones propietarias, adaptándonos a las
+      necesidades específicas de cada cliente.
+    </p>
+  </div>
 
-    .centered-block.active {
-        opacity: 1;
-    }
-</style>
+  <div id="block1" class="centered-block">
+    <h2 class="text-2xl font-bold text-pink-300 mb-3">Nuestra Misión</h2>
+    <p class="mb-6">
+      Nuestra misión es impulsar la innovación a través de la tecnología.
+      Creemos en el poder transformador del software para resolver problemas,
+      mejorar procesos y potenciar el crecimiento empresarial. Con un enfoque
+      tanto en el código abierto como en el cerrado, nos esforzamos por brindar
+      soluciones versátiles y efectivas que impulsen el éxito de nuestros
+      clientes.
+    </p>
+  </div>
 
-<div class="mx-20 p-10 text-center">
-    <div id="block0" class="centered-block mx-20 p-10 text-center active">
-        <Logo class="text-center text-3xl " ejeX="-20" size="400"/>
-        <h1 class="text-3xl font-bold text-pink-500 mb-6 text-center">Consultora de Software Innovadora</h1>
-        <p class="text-lg mb-6">En nuestra consultora de software, nos enorgullece ofrecer soluciones a medida tanto para empresas emergentes como para grandes corporaciones. Nos especializamos en el desarrollo de software independiente, abarcando tanto código abierto como soluciones propietarias, adaptándonos a las necesidades específicas de cada cliente.</p>
+  <div id="block2" class="centered-block">
+    <h2 class="text-2xl font-bold text-pink-300 mb-3">Lo Que Ofrecemos</h2>
+    <ul class="list-disc pl-6 mb-6">
+      <li class="mb-2">
+        <strong class="text-pink-200">Desarrollo de Software:</strong> Nuestro equipo
+        altamente calificado y experimentado está listo para llevar a cabo proyectos
+        de desarrollo de software de cualquier tamaño y complejidad. Ya sea que necesites
+        una aplicación web, móvil o de escritorio, estamos aquí para convertir tus
+        ideas en realidad.
+      </li>
+      <li class="mb-2">
+        <strong class="text-pink-200">Código Abierto y Cerrado:</strong> Valoramos
+        la libertad y la colaboración que ofrece el código abierto, pero también
+        entendemos las necesidades de seguridad y exclusividad de ciertas empresas.
+        Por eso, ofrecemos soluciones en ambos ámbitos, asegurando la elección más
+        adecuada para cada proyecto.
+      </li>
+      <li class="mb-2">
+        <strong class="text-pink-200">Servicios de Consultoría:</strong> Más allá
+        del desarrollo de software, ofrecemos servicios de consultoría personalizados
+        para ayudarte a optimizar tus procesos, adoptar nuevas tecnologías y mantener
+        una ventaja competitiva en un mercado en constante evolución.
+      </li>
+    </ul>
+  </div>
+
+  <div id="block3" class="centered-block">
+    <h2 class="text-2xl font-bold text-pink-300 mb-3">Por Qué Elegirnos</h2>
+    <ul class="list-disc pl-6 mb-6">
+      <li class="mb-2">
+        <strong class="text-pink-200">Experiencia y Profesionalismo:</strong> Con
+        años de experiencia en la industria, nuestro equipo cuenta con las habilidades
+        y el conocimiento necesarios para abordar cualquier desafío de desarrollo
+        de software con profesionalismo y excelencia.
+      </li>
+      <li class="mb-2">
+        <strong class="text-pink-200">Compromiso con la Calidad:</strong> Nos comprometemos
+        a ofrecer soluciones de software de la más alta calidad, utilizando las mejores
+        prácticas de desarrollo y asegurando resultados que cumplan y superen las
+        expectativas de nuestros clientes.
+      </li>
+      <li class="mb-2">
+        <strong class="text-pink-200">Enfoque Personalizado:</strong> Entendemos
+        que cada proyecto es único, por lo que nos dedicamos a comprender tus necesidades
+        específicas y a ofrecer soluciones personalizadas que se ajusten perfectamente
+        a tus objetivos y requisitos.
+      </li>
+    </ul>
     </div>
-
-    <div id="block1" class="centered-block mt-10 mx-20 p-10 text-center scroll-smooth">
-        <h2 class="text-2xl font-bold text-pink-300 mb-3">Nuestra Misión</h2>
-        <p class="mb-6">Nuestra misión es impulsar la innovación a través de la tecnología. Creemos en el poder transformador del software para resolver problemas, mejorar procesos y potenciar el crecimiento empresarial. Con un enfoque tanto en el código abierto como en el cerrado, nos esforzamos por brindar soluciones versátiles y efectivas que impulsen el éxito de nuestros clientes.</p>
-    </div>
-
-    <div id="block2" class="centered-block mx-20 p-10 text-center">
-        <h2 class="text-2xl font-bold text-pink-300 mb-3">Lo Que Ofrecemos</h2>
-        <ul class="list-disc pl-6 mb-6">
-            <li class="mb-2"><strong class="text-pink-200">Desarrollo de Software:</strong> Nuestro equipo altamente calificado y experimentado está listo para llevar a cabo proyectos de desarrollo de software de cualquier tamaño y complejidad. Ya sea que necesites una aplicación web, móvil o de escritorio, estamos aquí para convertir tus ideas en realidad.</li>
-            <li class="mb-2"><strong class="text-pink-200">Código Abierto y Cerrado:</strong> Valoramos la libertad y la colaboración que ofrece el código abierto, pero también entendemos las necesidades de seguridad y exclusividad de ciertas empresas. Por eso, ofrecemos soluciones en ambos ámbitos, asegurando la elección más adecuada para cada proyecto.</li>
-            <li class="mb-2"><strong class="text-pink-200">Servicios de Consultoría:</strong> Más allá del desarrollo de software, ofrecemos servicios de consultoría personalizados para ayudarte a optimizar tus procesos, adoptar nuevas tecnologías y mantener una ventaja competitiva en un mercado en constante evolución.</li>
-        </ul>
-    </div>
-
-    <div id="block3" class="centered-block mx-20 p-10 text-center">
-        <h2 class="text-2xl font-bold text-pink-300 mb-3">Por Qué Elegirnos</h2>
-        <ul class="list-disc pl-6 mb-6">
-            <li class="mb-2"><strong class="text-pink-200">Experiencia y Profesionalismo:</strong> Con años de experiencia en la industria, nuestro equipo cuenta con las habilidades y el conocimiento necesarios para abordar cualquier desafío de desarrollo de software con profesionalismo y excelencia.</li>
-            <li class="mb-2"><strong class="text-pink-200">Compromiso con la Calidad:</strong> Nos comprometemos a ofrecer soluciones de software de la más alta calidad, utilizando las mejores prácticas de desarrollo y asegurando resultados que cumplan y superen las expectativas de nuestros clientes.</li>
-            <li class="mb-2"><strong class="text-pink-200">Enfoque Personalizado:</strong> Entendemos que cada proyecto es único, por lo que nos dedicamos a comprender tus necesidades específicas y a ofrecer soluciones personalizadas que se ajusten perfectamente a tus objetivos y requisitos.</li>
-        </ul>
-        <p class="text-lg mb-6">Si estás buscando una consultora de software comprometida, innovadora y orientada a resultados, ¡has venido al lugar correcto! <a href="#" class="text-pink-500 hover:underline">Contáctanos</a> hoy mismo para descubrir cómo podemos ayudarte a llevar tu negocio al siguiente nivel con nuestras soluciones de software a medida.</p>
+    
+    <div id="block4" class="centered-block">
+    <Logo class="text-center text-3xl" ejeX="-20" size="400" />
+        <h1 class="text-2xl font-bold text-pink-300 mb-3">Te esperamos</h1>
+        <p class="text-lg mb-6">
+          Si estás buscando una consultora de software comprometida, innovadora y
+          orientada a resultados, ¡has venido al lugar correcto! <a
+            href="#"
+            class="text-pink-500 hover:underline">Contáctanos</a
+          > hoy mismo para descubrir cómo podemos ayudarte a llevar tu negocio al siguiente
+          nivel con nuestras soluciones de software a medida.
+        </p>
     </div>
 </div>
 
 <script>
-function handleDOMContentLoaded() {
-    const centerClass = 'fixed inset-0 flex items-center justify-center'
-    const blocks = document.querySelectorAll('.centered-block');
-    let currentBlockIndex = 0;
-    function activateBlock() {
-        blocks.forEach(function(block, index) {
-            const currentIntex = index;
-            if (isInViewport(block)) {
-                if (currentBlockIndex !== currentIntex) {
-                    console.log('block', index);
-                    currentBlockIndex = currentIntex;
-                };
-                block.classList.add('active');
+  import { handleDOMContentLoaded } from "@src/utils/vertical-navigate.astro.ts";
+  import { handleMediaQueryChange } from "@src/utils/media-clases.astro";
+
+  const desktopClasses = ["mx-20", "p-10", "text-center"];
+  const mobileClasses = ["mx-4", "p-4", "text-left", "text-sm"];
+
+  const mediaQuery = window.matchMedia("(min-width: 768px)");
+  const blocks = document.querySelectorAll(".centered-block");
+
+  let lastScrollTop = 0;
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      let st = window.pageYOffset || document.documentElement.scrollTop;
+
+      blocks.forEach((block) => {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              if (st > lastScrollTop) {
+                // downscroll code
+                entry.target.classList.add("animate-down");
+              } else {
+                // upscroll code
+                entry.target.classList.add("animate-up");
+              }
             } else {
-                block.classList.remove('active');
+              entry.target.classList.remove("animate-down");
+              entry.target.classList.remove("animate-up");
             }
+          });
         });
-    }
-    function isInViewport(item: any) {
-        const rect = item.getBoundingClientRect();
-        return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-        );
-    }
-    window.addEventListener('scroll', activateBlock);
-}
-    document.addEventListener("DOMContentLoaded", handleDOMContentLoaded);
+
+        observer.observe(block);
+      });
+
+      lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+    },
+    false
+  );
+
+  handleMediaQueryChange(blocks, mediaQuery, desktopClasses, mobileClasses);
+  mediaQuery.addEventListener("change", () =>
+    handleMediaQueryChange(blocks, mediaQuery, desktopClasses, mobileClasses)
+  );
+  document.addEventListener("DOMContentLoaded", () =>
+    handleDOMContentLoaded(blocks)
+  );
 </script>
+<style>
+  @media (min-width: 768px) {
+    .centered-block {
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+      margin-bottom: 50px;
+    }
+
+    .centered-block.active {
+      opacity: 1;
+    }
+  }
+  @media (max-width: 768px) {
+    .centered-block {
+      /* opacity: 0;
+      transition: opacity 0.5s ease-in-out; */
+      margin-bottom: 100px;
+    }
+
+    /* .centered-block.active {
+      opacity: 1;
+    } */
+    .animate-down {
+      animation: moveDown 1s ease-in-out;
+    }
+
+    .animate-up {
+      animation: moveUp 1s ease-in-out;
+    }
+
+    @keyframes moveDown {
+      0% {
+        transform: translateY(-100px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes moveUp {
+      0% {
+        transform: translateY(100px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  }
+</style>

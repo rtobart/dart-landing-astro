@@ -1,11 +1,17 @@
-export function handleDOMContentLoaded() {
-    const blocks = document.querySelectorAll('.centered-block');
+export function handleDOMContentLoaded(blocks: any) {
+    let indexActiveBlock = 0;
     function activateBlock() {
-        blocks.forEach(function(block) {
-            if (isInViewport(block)) {
+        blocks.forEach(function(block: any, index: any) {
+            if (isInViewport(block) && indexActiveBlock !== index) {
+                const list = [0, 1, 2, 3, 4]
+                console.log('####### agrega active a ', index);
                 block.classList.add('active');
-            } else {
-                block.classList.remove('active');
+                indexActiveBlock = index;
+                list.forEach((item) => {
+                    if (indexActiveBlock !== item) {
+                        blocks[item].classList.remove('active');
+                    }
+                });
             }
         });
     }
@@ -18,8 +24,5 @@ export function handleDOMContentLoaded() {
             rect.right <= (window.innerWidth || document.documentElement.clientWidth)
         );
     }
-    activateBlock();
-    window.addEventListener('scroll', function() {
-        activateBlock();
-    });
+    window.addEventListener('scroll', activateBlock);
 }
